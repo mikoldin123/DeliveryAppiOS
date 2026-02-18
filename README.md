@@ -100,3 +100,47 @@ If I had more time to implement real-time driver tracking:
 2.  **Communication:** I would use a `WebSocket` connection managed by a `LocationRepository`.
 3.  **State:** The ViewModel would subscribe to a `PassthroughSubject<CLLocationCoordinate2D, Never>` stream.
 4.  **Testing:** By wrapping the Map SDK, I can unit test the ViewModel's reaction to coordinate updates (e.g., calculating ETA) without needing to instantiate a real MapView or simulate GPS signals in the test runner.
+
+## How to Run the App and Tests
+
+### Prerequisites
+-   **Xcode:** Version 26.0 or later.
+-   **iOS SDK:** iOS 26.0 or later.
+    
+### Installation
+
+1.  **Clone the repository:**
+    ```
+    git clone https://github.com/your-username/DeliveryAppiOS.git
+    cd DeliveryApp
+    ```
+2.  **Open the project:** Double-click `DeliveryApp.xcodeproj` to open it in Xcode.
+
+### Running the App
+
+1.  Select the **DeliveryApp** scheme from the top toolbar.
+    
+2.  Choose a Simulator (e.g., **iPhone 17 Pro** or **iPhone SE 3rd Gen** to test layout responsiveness).
+    
+3.  Press `CMD + R` or click the **Play** button.
+    
+
+### Running Tests
+
+This project includes a suite of unit tests covering view models, services, and state management.
+
+1.  **Run All Tests:**
+    -   Press `CMD + U` in Xcode.
+    -   Alternatively, go to `Product > Test` in the menu bar.
+        
+2.  **View Coverage:**
+    -   After the tests finish, open the **Report Navigator** (last icon in the left panel, or `CMD + 9`).
+    -   Select the latest **Test** run to view pass/fail status and coverage reports.
+        
+### CLI (Optional)
+You can also run tests via the command line:
+```
+xcodebuild test \
+  -scheme DeliveryApp \
+  -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest'
+```
